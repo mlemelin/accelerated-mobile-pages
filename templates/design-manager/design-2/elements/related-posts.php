@@ -14,6 +14,13 @@
 							$args=array(
 							    'category__in' => $category_ids,
 							    'post__not_in' => array($post->ID),
+                  'meta_query' => array(
+                		array(
+                			'key'     => 'obox-amp-enabled',
+                			'value'   => 1,
+                			'compare' => '=',
+                		),
+                	),
 							    'posts_per_page'=> $int_number_of_related_posts,
 							    'ignore_sticky_posts'=>1,
                   'has_password' => false ,
@@ -30,6 +37,13 @@
 										$args=array(
 										   'tag__in' => $tag_ids,
 										    'post__not_in' => array($post->ID),
+                        'meta_query' => array(
+                      		array(
+                      			'key'     => 'obox-amp-enabled',
+                      			'value'   => 1,
+                      			'compare' => '=',
+                      		),
+                      	),
 										    'posts_per_page'=> $int_number_of_related_posts,
 										    'ignore_sticky_posts'=>1,
                         'has_password' => false ,
